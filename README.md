@@ -30,6 +30,51 @@ FastAssert provides you with :
 
 This tool can be used to build reasoning steps, If/Else branches in LLM workflows or filter unwanted input.
 
+## Requirements
+
+- OS: Linux
+- CUDA 12.1
+- Min. GPU RAM for inference : 16 GB
+
+## Installation
+
+### Server
+
+Build the container:
+```shell
+sudo docker build -t fastassert .
+```
+
+Run the container:
+```shell
+sudo docker run --gpus all -p 8000:8000 fastassert
+```
+
+Your server is now running on port 8000
+
+### Notebook
+
+Install the required dependancies to run a Jupyter Notebook 
+```shell
+pip install notebook
+```
+
+(Optional) Add a password to secure your notebook
+```
+jupyter notebook password
+```
+
+Launch the notebook in remote access mode
+```
+jupyter notebook --no-browser --port=8888 --ip=0.0.0.0
+```
+
+Open the notebook in your local webbrowser 
+
+```
+http://localhost:8888
+```
+
 ## Examples
 
 ### Python client
