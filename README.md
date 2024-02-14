@@ -4,7 +4,7 @@
 
 ## What is FastAssert?
 
-FastAssert enables run an Open Source LLM locally or through an API specifically design to check the validity of the given assertion against a semantic condition.
+FastAssert enables run an Open Source LLM locally or through an API specifically design to generate constrained output (JSON structured or regex).
 
 This means :
 
