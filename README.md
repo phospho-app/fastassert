@@ -1,4 +1,4 @@
-# FastAssert : check semantic assertions, fast
+# FastAssert 
 
 > **TL;DR :** Generate structured outputs with open source LLMs. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
 
