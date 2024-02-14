@@ -72,13 +72,24 @@ curl http://127.0.0.1:8000/generate \
 ### Notebook
 
 Install the required dependancies to run a Jupyter Notebook 
-```shell
+```
+conda create --name notebookenv python=3.11
+conda activate notebookenv
+conda install ipykernel
+python -m ipykernel install --user --name=notebookenv --display-name="Python (notebookenv)"
+
+
 pip install notebook
 ```
 
 (Optional) Add a password to secure your notebook
 ```
 jupyter notebook password
+```
+
+If you want to compare the performance of the FastAssert server to your current OpenAI implementation, don't forget to export your API key as an environment variable before starting the jupyter notebook:
+```
+export OPENAI_API_KEY=""
 ```
 
 Launch the notebook in remote access mode in the remote machine:
@@ -94,6 +105,17 @@ ssh -L localhost:8888:localhost:8888 remote_user@remote_host
 Open the notebook in your local webbrowser and enjoy your notebook:
 ```
 http://localhost:8888
+```
+
+Make sure you use the right kernel, `Python (notebookenv)` in our case.
+
+## Experimental results 
+
+For a JSON constrained output completion task:
+```
+OpenAI GPT-3.5 Mean: 0.92350 s, Standard Deviation: 0.33619
+OpenAI GPT-4 Mean: 1.44287 s, Standard Deviation: 0.375827
+FastAssert Mean: 0.30335 s, Standard Deviation: 0.0055845
 ```
 
 ## Wanna try it through an hosted API?
