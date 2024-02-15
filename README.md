@@ -77,8 +77,6 @@ conda create --name notebookenv python=3.11
 conda activate notebookenv
 conda install ipykernel
 python -m ipykernel install --user --name=notebookenv --display-name="Python (notebookenv)"
-
-
 pip install notebook
 ```
 
