@@ -21,4 +21,4 @@ uvicorn
 fastapi
 pydantic>=2.0
 
-outlines
+outlines==0.0.31
