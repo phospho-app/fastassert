@@ -9,7 +9,6 @@ FastAssert is a dockerized LLM inference server with constrained output (JSON mo
 This means, with the same level of accuracy :
 
 - Same quality as GPT 3.5 but 3 times faster
-- Quality comparable to GPT3.5
 - No validation error thanks to **outlines** (guaranteed JSON or regex output)
 - Reduced cost (especially compared to Function Calling)
 - Lower chance to hit the API rate limit of your LLM provider
