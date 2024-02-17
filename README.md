@@ -1,10 +1,10 @@
 # FastAssert 
 
-> **TL;DR :** Generate structured outputs with open source LLMs. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
+> **TL;DR :** FastAssert is a dockerized LLM inference server with constrained output (JSON models), built on top of vLLM. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
 
 ## What is FastAssert?
 
-FastAssert enables run an Open Source LLM locally or through an API specifically design to generate constrained output (JSON structured or regex).
+FastAssert is a dockerized LLM inference server with constrained output (JSON models). It's built on top of vLLM, the leading LLM inference server.
 
 This means, with the same level of accuracy :
 
@@ -13,11 +13,24 @@ This means, with the same level of accuracy :
 - lower chance to hit the API rate limit of your LLM provider (OpenAI and family)
 - no validation error : guaranteed JSON or regex output 
 
+## Performance Overview
+
+See the notebook `performance.ipynb` for a full analysis. For the OpenAI function calling demo task, FastAssert achieved the same level of accuracy that OpenAI GPT3.5 turbo with function calling while being 3x faster.
+
+![Completion Time Comparison](images/completion_times.png "Completion Time Comparison")
+
+Accuracy on the task:
+```
+GPT3-5 turbo accuracy 0.7857
+GPT4 accuracy 0.9285
+FastAssert accuracy 0.7857
+```
+
 ## How does it work?
 
 FastAssert provides you with :
 
-- a server to run locally : takes a text prompt and a JSON format or regex expression as request, and returns the desired generation
+- a server to run locally, using vLLM, fastapi and outlines : takes a text prompt and a JSON format or regex expression as request, and returns the desired generation
 - a notebook and script to assess the performance of the server in term of accuracy and latency compared to your current implementation and find the optimal model to use
 
 ## Common use cases
@@ -34,7 +47,7 @@ FastAssert provides you with :
 
 - OS: Linux
 - CUDA 12.1
-- Min. GPU RAM for inference : 16 GB
+- Min. GPU RAM for inference : 16 GB (we used a NVIDIA A100 40GB)
 
 ## Installation
 
@@ -120,9 +133,6 @@ FastAssert Mean: 0.30335 s, Standard Deviation: 0.0055845
 
 Contact us at [fastassert@phospho.app](mailto:fastassert@phospho.app) to get access.
 
-## Acknowledgement
+## What's next
 
-This work was made possible thanks to several open source projects :
-- vLLM
-- outlines
-- fastapi
+Try out on your use case to see if you can keep the same accuracy but improve costs and latency.
