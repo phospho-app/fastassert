@@ -1,6 +1,6 @@
 # FastAssert 
 
-> **TL;DR :** FastAssert is a dockerized LLM inference server with constrained output (JSON models), built on top of vLLM. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
+> **TL;DR :** Dockerized LLM inference server with constrained output (JSON mode), built on top of vLLM. Faster, cheaper and without rate limit. Compare the quality and latency to your current LLM API provider.
 
 ## What is FastAssert?
 
