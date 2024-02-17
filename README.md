@@ -131,7 +131,7 @@ FastAssert Mean: 0.30335 s, Standard Deviation: 0.0055845
 
 ## Wanna try it through an hosted API?
 
-Contact us at [fastassert@phospho.app](mailto:fastassert@phospho.app) to get access.
+Fill in this [quick form](https://docs.google.com/forms/d/e/1FAIpQLSc8TaSb90r4CMFBbbpnF-6CWSIhvQlfvAY62eeu-GV6X2eA8Q/viewform?usp=sf_link) to get access to the hosted API.
 
 ## What's next
 
