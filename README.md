@@ -1,6 +1,6 @@
 # FastAssert 
 
-> **TL;DR :** FastAssert is a dockerized LLM inference server with constrained output (JSON models), built on top of vLLM. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
+> **TL;DR :** FastAssert is a dockerized LLM inference server with constrained output (JSON models), built on top of vLLM and outlines. It’s faster, cheaper and doesn’t impact your LLM provider API rate limit. Get a script to compare the quality and latency compared to your current LLM API provider.
 
 ## What is FastAssert?
 
@@ -8,14 +8,11 @@ FastAssert is a dockerized LLM inference server with constrained output (JSON mo
 
 This means, with the same level of accuracy :
 
-- improved latency (especially if you were using Function Calling)
-- reduced cost (especially if you were using Function Calling)
-- lower chance to hit the API rate limit of your LLM provider (OpenAI and family)
-- no validation error : guaranteed JSON or regex output 
-
-## Performance Overview
-
-See the notebook `performance.ipynb` for a full analysis. For the OpenAI function calling demo task, FastAssert achieved the same level of accuracy that OpenAI GPT3.5 turbo with function calling while being 3x faster.
+- Same quality as GPT 3.5 but 3 times faster
+- Quality comparable to GPT3.5
+- No validation error thanks to **outlines** (guaranteed JSON or regex output)
+- Reduced cost (especially compared to Function Calling)
+- Lower chance to hit the API rate limit of your LLM provider
 
 ![Completion Time Comparison](images/completion_times.png "Completion Time Comparison")
 
@@ -25,6 +22,8 @@ GPT3-5 turbo accuracy 0.7857
 GPT4 accuracy 0.9285
 FastAssert accuracy 0.7857
 ```
+
+See the notebook `performance.ipynb` for a full analysis.
 
 ## How does it work?
 
